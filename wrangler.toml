@@ -7,3 +7,6 @@ command = "cargo install -q worker-build && worker-build --release"
 
 [vars]
 ORIGIN = "https://tylerearls.com"
+
+[observability]
+enabled = true
