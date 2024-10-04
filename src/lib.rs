@@ -6,7 +6,6 @@ async fn fetch(
     env: Env,
     _ctx: Context,
 ) -> Result<Response> {
-    let version = env.var("WORKERS_RS_VERSION")?.to_string();
     let origin = env.var("ORIGIN")?.to_string();
     let response = worker::Fetch::Request(req).send().await?;
 
@@ -24,6 +23,5 @@ async fn fetch(
         "default-src 'self' 'unsafe-inline' 'unsafe-eval' cloudflareinsights.com *.cloudflareinsights.com",
     )?;
     headers.set("access-control-allow-origin", &origin)?;
-    headers.set("cf-worker-version", &version)?;
     Ok(response.with_headers(headers))
 }
