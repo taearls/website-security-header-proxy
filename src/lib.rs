@@ -20,7 +20,7 @@ async fn fetch(
     headers.set("permissions-policy", "microphone 'none'")?;
     headers.set(
         "content-security-policy",
-        "default-src 'self' cloudflareinsights.com *.cloudflareinsights.com; img-src 'self' *.cloudinary.com",
+        "default-src 'self' cloudflareinsights.com *.cloudflareinsights.com; img-src 'self' *.cloudinary.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com",
     )?;
     headers.set("permissions-policy", "microphone=(), geolocation=()")?;
     headers.set("access-control-allow-origin", &origin)?;
