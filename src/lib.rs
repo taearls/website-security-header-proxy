@@ -21,7 +21,7 @@ async fn fetch(
     // TODO: add allow list for CSP to be passed in via an environment variable
     headers.set(
         "content-security-policy",
-        "default-src 'self' cloudflareinsights.com *.cloudflareinsights.com; img-src 'self' *.cloudinary.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' sha256-0CSx9/hUJ240DFaJHtlhZUentcmTq3z73sCtaUwxOWM=",
+        "default-src 'self' cloudflareinsights.com *.cloudflareinsights.com; img-src 'self' *.cloudinary.com; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self' cloudflareinsights.com 'sha256-0CSx9/hUJ240DFaJHtlhZUentcmTq3z73sCtaUwxOWM='",
     )?;
     headers.set("permissions-policy", "microphone=(), geolocation=()")?;
     headers.set("access-control-allow-origin", &origin)?;
